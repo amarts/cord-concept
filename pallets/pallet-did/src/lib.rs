@@ -79,7 +79,7 @@
 
 use codec::{Decode, Encode};
 use frame_support::{
-    decl_error, decl_event, decl_module, decl_storage, dispatch::DispatchResult, ensure, StorageMap,
+    decl_error, decl_event, decl_module, decl_storage, dispatch::DispatchResult, ensure, StorageMap, Parameter,
 };
 use frame_system::{self, ensure_signed};
 use sp_core::RuntimeDebug;
@@ -120,6 +120,10 @@ pub trait Trait: frame_system::Trait + pallet_timestamp::Trait {
     type Event: From<Event<Self>> + Into<<Self as frame_system::Trait>::Event>;
     type Public: IdentifyAccount<AccountId = Self::AccountId>;
     type Signature: Verify<Signer = Self::Public> + Member + Decode + Encode;
+    /// Public signing key type for DIDs
+    type PublicSigningKey: Parameter + Member + Default;
+    /// Public boxing key type for DIDs
+    type PublicBoxKey: Parameter + Member + Default;
 }
 
 decl_storage! {
@@ -136,6 +140,8 @@ decl_storage! {
         pub OwnerOf get(fn owner_of): map hasher(blake2_128_concat) T::AccountId => Option<T::AccountId>;
         /// Tracking the latest identity update.
         pub UpdatedBy get(fn updated_by): map hasher(blake2_128_concat) T::AccountId => (T::AccountId, T::BlockNumber, T::Moment);
+        // DID: account-id -> (public-signing-key, public-encryption-key, did-reference?)?
+	DIDs get(fn dids):map hasher(opaque_blake2_256) T::AccountId => Option<(T::PublicSigningKey, T::PublicBoxKey, Option<Vec<u8>>)>;	
     }
 }
 
@@ -305,6 +311,30 @@ decl_module! {
             Self::deposit_event(RawEvent::AttributeTransactionExecuted(transaction));
             Ok(())
         }
+
+	#[weight = 0]
+	pub fn add(origin, sign_key: T::PublicSigningKey, box_key: T::PublicBoxKey, doc_ref: Option<Vec<u8>>) -> DispatchResult {
+	    // origin of the transaction needs to be a signed sender account
+	    let sender = ensure_signed(origin)?;
+	    // add DID to the storage
+	    <DIDs<T>>::insert(sender.clone(), (sign_key, box_key, doc_ref));
+	    // deposit an event that the DID has been created
+	    Self::deposit_event(RawEvent::DidCreated(sender));
+	    Ok(())
+	}
+
+	/// Removes a DID from chain storage, where
+	/// origin - the origin of the transaction
+	#[weight = 0]
+	pub fn remove(origin) -> DispatchResult {
+	    // origin of the transaction needs to be a signed sender account
+	    let sender = ensure_signed(origin)?;
+	    // remove DID from storage
+	    <DIDs<T>>::remove(sender.clone());
+	    // deposit an event that the DID has been removed
+	    Self::deposit_event(RawEvent::DidRemoved(sender));
+	    Ok(())
+	}
     }
 }
 
@@ -322,6 +352,8 @@ decl_event!(
     AttributeRevoked(AccountId,Vec<u8>,BlockNumber),
     AttributeDeleted(AccountId,Vec<u8>,BlockNumber),
     AttributeTransactionExecuted(AttributeTransaction<Signature,AccountId>),
+    DidCreated(AccountId),
+    DidRemoved(AccountId),
   }
 );
 

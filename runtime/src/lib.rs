@@ -106,7 +106,7 @@ pub const VERSION: RuntimeVersion = RuntimeVersion {
 	transaction_version: 1,
 };
 
-pub const MILLISECS_PER_BLOCK: u64 = 4000;
+pub const MILLISECS_PER_BLOCK: u64 = 20000;
 
 pub const SLOT_DURATION: u64 = MILLISECS_PER_BLOCK;
 
@@ -145,7 +145,7 @@ impl frame_system::Trait for Runtime {
 	/// The lookup mechanism to get account ID from whatever is passed in dispatchers.
 	type Lookup = IdentityLookup<AccountId>;
 	/// The index type for storing how many extrinsics an account has signed.
-	type Index = Index;
+	type Index = Index;	
 	/// The index type for blocks.
 	type BlockNumber = BlockNumber;
 	/// The type for hashing blocks and tries.
@@ -263,6 +263,8 @@ impl pallet_did::Trait for Runtime {
 	type Event = Event;
 	type Public = MultiSigner;
 	type Signature = Signature;
+	type PublicSigningKey = Hash;
+	type PublicBoxKey = Hash;
 }
 
 impl registrar::Trait for Runtime {
