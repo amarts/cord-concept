@@ -61,7 +61,7 @@ decl_module! {
 		/// been created. Will emit a CreatedOrganization event on success.
 		///
 		/// The dispatch origin for this call must be Signed.
-		#[weight = 10_000]
+		#[weight = 0]
 		pub fn create_organization(origin, org_name: Vec<u8>) -> dispatch::DispatchResult {
 			let who = ensure_signed(origin)?;
 			let mut orgs = Self::organizations();
@@ -81,7 +81,7 @@ decl_module! {
 		/// does not exist or the account is already a member. Will emit a AddedToOrganization event on success.
 		///
 		/// The dispatch origin for this call must be Signed.
-		#[weight = 10_000]
+		#[weight = 0]
 		pub fn add_to_organization(origin, account: T::AccountId) -> dispatch::DispatchResult {
 			let who = ensure_signed(origin)?;
 			// Organizations list.

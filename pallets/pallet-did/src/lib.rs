@@ -141,7 +141,7 @@ decl_storage! {
         /// Tracking the latest identity update.
         pub UpdatedBy get(fn updated_by): map hasher(blake2_128_concat) T::AccountId => (T::AccountId, T::BlockNumber, T::Moment);
         // DID: account-id -> (public-signing-key, public-encryption-key, did-reference?)?
-	DIDs get(fn dids):map hasher(opaque_blake2_256) T::AccountId => Option<(T::PublicSigningKey, T::PublicBoxKey, Option<Vec<u8>>)>;	
+	DIDs get(fn dids):map hasher(opaque_blake2_256) T::AccountId => Option<(T::PublicSigningKey, T::PublicBoxKey, Option<Vec<u8>>)>;
     }
 }
 
