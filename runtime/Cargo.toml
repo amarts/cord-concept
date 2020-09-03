@@ -11,15 +11,15 @@ targets = ['x86_64-unknown-linux-gnu']
 default-features = false
 git = 'https://github.com/paritytech/substrate.git'
 package = 'pallet-aura'
-tag = 'v2.0.0-rc5'
-version = '2.0.0-rc5'
+tag = 'v2.0.0-rc6'
+version = '2.0.0-rc6'
 
 [dependencies.balances]
 default-features = false
 git = 'https://github.com/paritytech/substrate.git'
 package = 'pallet-balances'
-tag = 'v2.0.0-rc5'
-version = '2.0.0-rc5'
+tag = 'v2.0.0-rc6'
+version = '2.0.0-rc6'
 
 [dependencies.codec]
 default-features = false
@@ -30,28 +30,28 @@ version = '1.3.1'
 [dependencies.frame-executive]
 default-features = false
 git = 'https://github.com/paritytech/substrate.git'
-tag = 'v2.0.0-rc5'
-version = '2.0.0-rc5'
+tag = 'v2.0.0-rc6'
+version = '2.0.0-rc6'
 
 [dependencies.frame-support]
 default-features = false
 git = 'https://github.com/paritytech/substrate.git'
-tag = 'v2.0.0-rc5'
-version = '2.0.0-rc5'
+tag = 'v2.0.0-rc6'
+version = '2.0.0-rc6'
 
 [dependencies.grandpa]
 default-features = false
 git = 'https://github.com/paritytech/substrate.git'
 package = 'pallet-grandpa'
-tag = 'v2.0.0-rc5'
-version = '2.0.0-rc5'
+tag = 'v2.0.0-rc6'
+version = '2.0.0-rc6'
 
 [dependencies.randomness-collective-flip]
 default-features = false
 git = 'https://github.com/paritytech/substrate.git'
 package = 'pallet-randomness-collective-flip'
-tag = 'v2.0.0-rc5'
-version = '2.0.0-rc5'
+tag = 'v2.0.0-rc6'
+version = '2.0.0-rc6'
 
 [dependencies.serde]
 features = ['derive']
@@ -62,110 +62,109 @@ version = '1.0.101'
 default-features = false
 git = 'https://github.com/paritytech/substrate.git'
 package = 'pallet-session'
-tag = 'v2.0.0-rc5'
-version = '2.0.0-rc5'
+tag = 'v2.0.0-rc6'
+version = '2.0.0-rc6'
 
 [dependencies.sp-api]
 default-features = false
 git = 'https://github.com/paritytech/substrate.git'
-tag = 'v2.0.0-rc5'
-version = '2.0.0-rc5'
+tag = 'v2.0.0-rc6'
+version = '2.0.0-rc6'
 
 [dependencies.sp-block-builder]
 default-features = false
 git = 'https://github.com/paritytech/substrate.git'
-tag = 'v2.0.0-rc5'
-version = '2.0.0-rc5'
+tag = 'v2.0.0-rc6'
+version = '2.0.0-rc6'
 
 [dependencies.sp-consensus-aura]
 default-features = false
 git = 'https://github.com/paritytech/substrate.git'
-tag = 'v2.0.0-rc5'
-version = '0.8.0-rc5'
+tag = 'v2.0.0-rc6'
+version = '0.8.0-rc6'
 
 [dependencies.sp-core]
 default-features = false
 git = 'https://github.com/paritytech/substrate.git'
-tag = 'v2.0.0-rc5'
-version = '2.0.0-rc5'
+tag = 'v2.0.0-rc6'
+version = '2.0.0-rc6'
 
 [dependencies.sp-inherents]
 default-features = false
 git = 'https://github.com/paritytech/substrate.git'
-tag = 'v2.0.0-rc5'
-version = '2.0.0-rc5'
+tag = 'v2.0.0-rc6'
+version = '2.0.0-rc6'
 
 [dependencies.sp-io]
 default-features = false
 git = 'https://github.com/paritytech/substrate.git'
-tag = 'v2.0.0-rc5'
-version = '2.0.0-rc5'
+tag = 'v2.0.0-rc6'
+version = '2.0.0-rc6'
 
 [dependencies.sp-offchain]
 default-features = false
 git = 'https://github.com/paritytech/substrate.git'
-tag = 'v2.0.0-rc5'
-version = '2.0.0-rc5'
+tag = 'v2.0.0-rc6'
+version = '2.0.0-rc6'
 
 [dependencies.sp-runtime]
 default-features = false
 git = 'https://github.com/paritytech/substrate.git'
-tag = 'v2.0.0-rc5'
-version = '2.0.0-rc5'
+tag = 'v2.0.0-rc6'
+version = '2.0.0-rc6'
 
 [dependencies.sp-session]
 default-features = false
 git = 'https://github.com/paritytech/substrate.git'
-tag = 'v2.0.0-rc5'
-version = '2.0.0-rc5'
+tag = 'v2.0.0-rc6'
+version = '2.0.0-rc6'
 
 [dependencies.sp-std]
 default-features = false
 git = 'https://github.com/paritytech/substrate.git'
-tag = 'v2.0.0-rc5'
-version = '2.0.0-rc5'
+tag = 'v2.0.0-rc6'
+version = '2.0.0-rc6'
 
 [dependencies.sp-transaction-pool]
 default-features = false
 git = 'https://github.com/paritytech/substrate.git'
-tag = 'v2.0.0-rc5'
-version = '2.0.0-rc5'
+tag = 'v2.0.0-rc6'
+version = '2.0.0-rc6'
 
 [dependencies.sp-version]
 default-features = false
 git = 'https://github.com/paritytech/substrate.git'
-tag = 'v2.0.0-rc5'
-version = '2.0.0-rc5'
+tag = 'v2.0.0-rc6'
+version = '2.0.0-rc6'
 
 [dependencies.sudo]
 default-features = false
 git = 'https://github.com/paritytech/substrate.git'
 package = 'pallet-sudo'
-tag = 'v2.0.0-rc5'
-version = '2.0.0-rc5'
+tag = 'v2.0.0-rc6'
+version = '2.0.0-rc6'
 
 [dependencies.frame-system]
 default-features = false
 git = 'https://github.com/paritytech/substrate.git'
 package = 'frame-system'
-tag = 'v2.0.0-rc5'
-version = '2.0.0-rc5'
+tag = 'v2.0.0-rc6'
+version = '2.0.0-rc6'
 
 [dependencies.timestamp]
 default-features = false
 git = 'https://github.com/paritytech/substrate.git'
 package = 'pallet-timestamp'
-tag = 'v2.0.0-rc5'
-version = '2.0.0-rc5'
+tag = 'v2.0.0-rc6'
+version = '2.0.0-rc6'
+
+# -- Pallets specific for this runtime --
+
 
 [dependencies.pallet-transaction-payment]
 default-features = false
-git = 'https://github.com/paritytech/substrate.git'
+path = '../frame/transaction-payment'
 package = 'pallet-transaction-payment'
-tag = 'v2.0.0-rc5'
-version = '2.0.0-rc5'
-
-# -- Pallets specific for this runtime --
 
 [dependencies.pallet-did]
 default-features = false
@@ -192,13 +191,18 @@ default-features = false
 path = '../pallets/pallet-schema'
 version = '0.0.1'
 
+[dependencies.pallet-credential]
+default-features = false 
+path = '../pallets/pallet-credential'
+version = '0.0.1'
+
 
 # -- End of Pallets specific for this runtime --
 
 [build-dependencies.wasm-builder-runner]
 git = 'https://github.com/paritytech/substrate.git'
 package = 'substrate-wasm-builder-runner'
-tag = 'v2.0.0-rc5'
+tag = 'v2.0.0-rc6'
 version = '1.0.5'
 
 [features]
@@ -209,6 +213,8 @@ std = [
     'codec/std',
     'frame-executive/std',
     'frame-support/std',
+    'frame-system/std',
+    'pallet-transaction-payment/std',
     'grandpa/std',
     'randomness-collective-flip/std',
     'serde',
@@ -217,21 +223,19 @@ std = [
     'sp-consensus-aura/std',
     'sp-core/std',
     'sp-inherents/std',
-	'sp-io/std',
+    'sp-io/std',
     'sp-offchain/std',
     'sp-runtime/std',
     'sp-session/std',
     'sp-std/std',
-    'sp-transaction-pool/std',
     'sp-version/std',
     'sudo/std',
-    'frame-system/std',
     'timestamp/std',
-    'pallet-transaction-payment/std',
     'pallet-did/std',
-	'validatorset/std',
-	'session/std',
-	'rbac/std',
-	'registrar/std',
+    'validatorset/std',
+    'session/std',
+    'rbac/std',
+    'registrar/std',
     'pallet-schema/std',
+    'pallet-credential/std',
 ]

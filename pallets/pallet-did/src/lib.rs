@@ -58,6 +58,7 @@
 //! * `add_attribute` - Creates a new attribute/property as part of an identity. Sets its expiration period.
 //! * `revoke_attribute` - Revokes an attribute/property from an identity. Sets its expiration period to the actual block number.
 //! * `delete_attribute` - Removes an attribute/property from an identity. This attribute/property becomes unavailable.
+//! * `add_did` - Adds a DID
 //! * `execute` - Executes off-chain signed transactions.
 //!
 //! ### Public Functions
@@ -313,7 +314,12 @@ decl_module! {
         }
 
 	#[weight = 0]
-	pub fn add(origin, sign_key: T::PublicSigningKey, box_key: T::PublicBoxKey, doc_ref: Option<Vec<u8>>) -> DispatchResult {
+	pub fn add_did(
+	  origin,
+	  sign_key: T::PublicSigningKey,
+	  box_key: T::PublicBoxKey,
+	  doc_ref: Option<Vec<u8>>
+	  ) -> DispatchResult {
 	    // origin of the transaction needs to be a signed sender account
 	    let sender = ensure_signed(origin)?;
 	    // add DID to the storage
